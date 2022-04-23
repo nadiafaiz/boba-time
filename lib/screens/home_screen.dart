@@ -66,19 +66,27 @@ class _HomeScreenState extends State<HomeScreen> {
               color: const Color(0xfff0edca),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: AppText.normalText(
-                          'Welcome ${currentUser.fullName}',
-                          isBold: true,
-                        ),
-                      ),
+                      currentUser.fullName != null
+                          ? Align(
+                              alignment: Alignment.center,
+                              child: AppText.normalText(
+                                'Welcome ${currentUser.fullName}!',
+                                isBold: true,
+                              ),
+                            )
+                          : Align(
+                              alignment: Alignment.center,
+                              child: AppText.normalText(
+                                'Welcome!',
+                                isBold: true,
+                              ),
+                            ),
                     ],
                   ),
                   Row(
