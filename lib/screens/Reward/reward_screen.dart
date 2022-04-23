@@ -11,7 +11,7 @@ class RewardScreen extends StatelessWidget {
       backgroundColor: primaryColor,
       appBar: AppBar(
         backgroundColor: primarylightColor,
-        title: const Text("Reward"),
+        title: const Text("Rewards"),
       ),
       body: const Body(),
     );
