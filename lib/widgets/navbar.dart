@@ -2,6 +2,8 @@ import 'package:boba_time/screens/landing_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../screens/Profile/profile_screen.dart';
+
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
 
@@ -39,7 +41,12 @@ class NavBar extends StatelessWidget {
             leading: const Icon(Icons.person),
             title: const Text('Profile'),
             // Update this to navigate to profile screen
-            onTap: () => {},
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute( builder: (context) => ProfileScreen()),
+              )
+            },
           ),
           ListTile(
             leading: const Icon(Icons.share),

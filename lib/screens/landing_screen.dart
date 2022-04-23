@@ -1,5 +1,6 @@
 import 'package:boba_time/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:boba_time/screens/Login/login_screen.dart';
 
 import '../widgets/app_buttons.dart';
 
@@ -32,7 +33,14 @@ class LandingScreen extends StatelessWidget {
                     child: AppButtons.mainButton(
                       'SIGN IN | SIGN UP',
                       onPressed: () {
-                        onSignInSignUpPressed(context);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) {
+                                  return LoginScreen();
+                                },
+                            ),
+                        );
                       },
                       buttonColor: const Color(0xff603a22),
                       textColor: Colors.white,
@@ -56,7 +64,22 @@ class LandingScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Spacer(flex: 2),
+                  const SizedBox(height: 10),
+                  SizedBox(
+                    width: double.maxFinite,
+                    child: AppButtons.mainButton(
+                      'CONTINUE AS GUEST',
+                      onPressed: () {
+                        onSignInSignUpPressed(context);
+                      },
+                      buttonColor: const Color(0xff603a22),
+                      textColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 15,
+                      ),
+                    ),
+                  ),
+                  const Spacer(flex: 1),
                 ],
               ),
             )
