@@ -14,8 +14,6 @@ class ProfileScreen extends StatelessWidget {
         title: const Text("Profile"),
       ),
       body: const Body(),
-      // bottomNavigationBar: CustomBottomNa,
     );
   }
-  
 }

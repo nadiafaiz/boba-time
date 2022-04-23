@@ -1,3 +1,4 @@
+import 'package:boba_time/screens/Reward/reward_screen.dart';
 import 'package:boba_time/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +52,16 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const RewardScreen();
+                              },
+                            ),
+                          );
+                        },
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: const <Widget>[
