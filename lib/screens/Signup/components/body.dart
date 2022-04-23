@@ -3,7 +3,6 @@ import 'package:boba_time/components/round_input_field.dart';
 import 'package:boba_time/components/round_password_field.dart';
 import 'package:boba_time/screens/Login/login_screen.dart';
 import 'package:boba_time/screens/Signup/components/background.dart';
-import 'package:boba_time/screens/home_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
