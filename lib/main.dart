@@ -19,13 +19,13 @@ class MyApp extends StatelessWidget {
           splash: "assets/images/logo.png",
           duration: 1000,
           splashTransition: SplashTransition.rotationTransition,
-          backgroundColor: Color.fromRGBO(56, 56, 56, 0.4),
+          backgroundColor: const Color.fromRGBO(56, 56, 56, 0.4),
           pageTransitionType: PageTransitionType.rightToLeftWithFade,
-          nextScreen: AppStartingPage()),
+          nextScreen: const AppStartingPage()),
       theme: ThemeData(
         fontFamily: 'Roboto',
       ),
-      home: const AppStartingPage(),
+    );
   }
 }
 
