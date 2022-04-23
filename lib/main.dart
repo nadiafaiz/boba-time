@@ -22,7 +22,10 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color.fromRGBO(56, 56, 56, 0.4),
           pageTransitionType: PageTransitionType.rightToLeftWithFade,
           nextScreen: AppStartingPage()),
-    );
+      theme: ThemeData(
+        fontFamily: 'Roboto',
+      ),
+      home: const AppStartingPage(),
   }
 }
 
