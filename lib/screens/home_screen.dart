@@ -1,13 +1,9 @@
-import 'package:boba_time/screens/Menu/menu.dart';
-import 'package:boba_time/screens/Reward/reward_screen.dart';
-import 'package:boba_time/widgets/app_text.dart';
+import 'package:boba_time/screens/screens.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import '../model/user_model.dart';
-import '../widgets/navbar.dart';
-import '../widgets/app_text.dart';
+import 'package:boba_time/model/model.dart';
+import 'package:boba_time/widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool isGuest;
@@ -129,7 +125,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const LocationScreen();
+                              },
+                            ),
+                          );
+                        },
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: const <Widget>[

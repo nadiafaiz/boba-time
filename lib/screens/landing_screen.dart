@@ -1,8 +1,6 @@
-import 'package:boba_time/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:boba_time/screens/Login/login_screen.dart';
-
-import '../widgets/app_buttons.dart';
+import 'package:boba_time/screens/screens.dart';
+import 'package:boba_time/widgets/widgets.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({Key? key}) : super(key: key);
@@ -55,7 +53,7 @@ class LandingScreen extends StatelessWidget {
                     child: AppButtons.mainButton(
                       'LOCATIONS',
                       onPressed: () {
-                        _continueAsGuest(context);
+                        _openLocations(context);
                       },
                       buttonColor: const Color(0xff603a22),
                       textColor: Colors.white,
@@ -96,6 +94,15 @@ class LandingScreen extends StatelessWidget {
         builder: (context) => const HomeScreen(
           isGuest: true,
         ),
+      ),
+    );
+  }
+
+  void _openLocations(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const LocationScreen(),
       ),
     );
   }

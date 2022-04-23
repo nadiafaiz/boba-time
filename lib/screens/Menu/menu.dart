@@ -1,8 +1,7 @@
 import 'package:boba_time/screens/Menu/components/menu_item.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
-import '../../model/menu_item_model.dart';
+import 'package:boba_time/model/model.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);

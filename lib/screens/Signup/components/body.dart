@@ -1,16 +1,12 @@
-import 'package:boba_time/components/round_button.dart';
-import 'package:boba_time/components/round_input_field.dart';
-import 'package:boba_time/components/round_password_field.dart';
-import 'package:boba_time/screens/Login/login_screen.dart';
+import 'package:boba_time/screens/screens.dart';
 import 'package:boba_time/screens/Signup/components/background.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
-import '../../../components/already_have_account_check.dart';
-import '../../../model/user_model.dart';
+import 'package:boba_time/components/components.dart';
+import 'package:boba_time/model/model.dart';
 
 class Body extends StatelessWidget {
   Body({Key? key}) : super(key: key);

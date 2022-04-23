@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import '../../../model/menu_item_model.dart';
+import '../../../model/model.dart';
 
 class MenuItem extends StatelessWidget {
   final MenuItemModel menuItem;

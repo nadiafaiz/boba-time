@@ -44,7 +44,7 @@ android {
 
     defaultConfig {
         applicationId "com.csc4360.boba_time"
-        minSdkVersion 19
+        minSdkVersion 20
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName

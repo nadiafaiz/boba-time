@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:boba_time/constants.dart';
 
-import '../constants.dart';
-
 class AlreadyHaveAccountCheck extends StatelessWidget {
   final bool login;
   final VoidCallback press;
