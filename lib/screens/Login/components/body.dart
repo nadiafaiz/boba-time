@@ -15,42 +15,44 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Background(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Text(
-            "LOGIN",
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          const Image(
-            image: AssetImage(
-              'assets/images/login.png',
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              "LOGIN",
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            fit: BoxFit.cover,
-          ),
-          RoundedInputField(
-            hintText: "Your email",
-            onChanged: (value) {},
-          ),
-          RoundedPasswordField(
-            onChanged: (value) {},
-          ),
-          const SizedBox(height: 10),
-          RoundedButton(text: "LOG IN", press: () {}),
-          const SizedBox(height: 10),
-          AlreadyHaveAccountCheck(
-            press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const SignUpScreen();
-                  },
-                ),
-              );
-            },
-          )
-        ],
+            const Image(
+              image: AssetImage(
+                'assets/images/login.png',
+              ),
+              fit: BoxFit.cover,
+            ),
+            RoundedInputField(
+              hintText: "Your email",
+              onChanged: (value) {},
+            ),
+            RoundedPasswordField(
+              onChanged: (value) {},
+            ),
+            const SizedBox(height: 10),
+            RoundedButton(text: "LOG IN", press: () {}),
+            const SizedBox(height: 10),
+            AlreadyHaveAccountCheck(
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const SignUpScreen();
+                    },
+                  ),
+                );
+              },
+            )
+          ],
+        ),
       ),
     );
   }
