@@ -1,17 +1,45 @@
 import 'package:boba_time/screens/Reward/reward_screen.dart';
 import 'package:boba_time/widgets/app_text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../model/user_model.dart';
 import '../widgets/navbar.dart';
 import '../widgets/app_text.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final User? user = FirebaseAuth.instance.currentUser;
+
+  var currentUser = UserModel();
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance
+        .collection("users")
+        .doc(user!.uid)
+        .get()
+        .then((value) {
+      currentUser = UserModel.fromMap(value);
+      setState(() {});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const NavBar(),
+      drawer: NavBar(
+        fullName: currentUser.fullName,
+        email: currentUser.email,
+      ),
       appBar: AppBar(
         backgroundColor: const Color(0xffffd8cf),
       ),
@@ -41,9 +69,10 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       Align(
                         alignment: Alignment.center,
-                        child:
-                            // Update placeholder { name } with logged in user
-                            AppText.normalText('Welcome {name}!', isBold: true),
+                        child: AppText.normalText(
+                          'Welcome ${currentUser.fullName}',
+                          isBold: true,
+                        ),
                       ),
                     ],
                   ),

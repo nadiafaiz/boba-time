@@ -1,11 +1,15 @@
 import 'package:boba_time/screens/landing_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../screens/Profile/profile_screen.dart';
 
 class NavBar extends StatelessWidget {
-  const NavBar({Key? key}) : super(key: key);
+  final String? fullName;
+  final String? email;
+  const NavBar({Key? key, required this.fullName, required this.email})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,16 +17,15 @@ class NavBar extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const UserAccountsDrawerHeader(
-            // Update this with Firebase user
-            accountName: Text('username'),
-            accountEmail: Text('username@gmail.com'),
-            currentAccountPicture: CircleAvatar(
+          UserAccountsDrawerHeader(
+            accountName: Text(fullName!),
+            accountEmail: Text(email!),
+            currentAccountPicture: const CircleAvatar(
               radius: 30.0,
               backgroundImage: AssetImage('assets/images/default_profile.png'),
               backgroundColor: Colors.transparent,
             ),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
               image: DecorationImage(
                 fit: BoxFit.fill,
@@ -35,7 +38,6 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.person),
             title: const Text('Profile'),
-            // Update this to navigate to profile screen
             onTap: () => {
               Navigator.push(
                 context,
@@ -55,16 +57,51 @@ class NavBar extends StatelessWidget {
           ListTile(
             title: const Text('Logout'),
             leading: const Icon(Icons.exit_to_app),
-            // Update this to log out user
             onTap: () => {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LandingScreen()),
-              ),
+              _showConfirmLogoutDialog(context),
             },
           ),
         ],
       ),
+    );
+  }
+
+  Future<void> _showConfirmLogoutDialog(BuildContext context) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Confirmation"),
+          content: SingleChildScrollView(
+            child: Column(
+              children: const <Widget>[
+                Text("Are you sure you want to logout?"),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text("Yes"),
+              onPressed: () async {
+                await FirebaseAuth.instance.signOut();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LandingScreen(),
+                  ),
+                );
+              },
+            ),
+            TextButton(
+              child: const Text("No"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

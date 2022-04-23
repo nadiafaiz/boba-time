@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class RoundedPasswordField extends StatelessWidget {
+  final String? Function(String?)? validator;
   final ValueChanged<String> onChanged;
   const RoundedPasswordField({
     Key? key,
     required this.onChanged,
+    this.validator,
   }) : super(key: key);
 
   @override

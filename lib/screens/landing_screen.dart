@@ -55,7 +55,7 @@ class LandingScreen extends StatelessWidget {
                     child: AppButtons.mainButton(
                       'LOCATIONS',
                       onPressed: () {
-                        onSignInSignUpPressed(context);
+                        _continueAsGuest(context);
                       },
                       buttonColor: const Color(0xff603a22),
                       textColor: Colors.white,
@@ -70,7 +70,7 @@ class LandingScreen extends StatelessWidget {
                     child: AppButtons.mainButton(
                       'CONTINUE AS GUEST',
                       onPressed: () {
-                        onSignInSignUpPressed(context);
+                        _continueAsGuest(context);
                       },
                       buttonColor: const Color(0xff603a22),
                       textColor: Colors.white,
@@ -89,10 +89,12 @@ class LandingScreen extends StatelessWidget {
     );
   }
 
-  void onSignInSignUpPressed(BuildContext context) {
+  void _continueAsGuest(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const HomeScreen()),
+      MaterialPageRoute(
+        builder: (context) => const HomeScreen(),
+      ),
     );
   }
 }

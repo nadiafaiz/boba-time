@@ -9,7 +9,8 @@ class CircularProgressIndicatorApp extends StatefulWidget {
   }
 }
 
-class CircularProgressIndicatorAppState extends State<CircularProgressIndicatorApp>{
+class CircularProgressIndicatorAppState
+    extends State<CircularProgressIndicatorApp> {
   late bool _loading;
   late double _progressValue;
 
@@ -19,43 +20,49 @@ class CircularProgressIndicatorAppState extends State<CircularProgressIndicatorA
     _loading = true;
     _progressValue = 0;
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Container(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Image.asset("assets/images/reward.png", height: 200,),
-              const SizedBox(height: 20),
-              Text('${200-(_progressValue).toInt()} points until your next free drink'),
-              const SizedBox(height: 50),
-              SizedBox(
-                height: 320.0,
-                child: Stack(
-                  children: <Widget>[
-                    Center(
-                      child: Container(
-                        child: CircularProgressIndicator(
-                          strokeWidth: 20,
-                          backgroundColor: const Color(0xff42C2FF),
-                          valueColor: const AlwaysStoppedAnimation<Color>(Color(0xffFF6FB5)),
-                          value: _progressValue/200,
-                        ),
-                        height: 320.0,
-                        width: 320.0,
-                      ),
-                    ),
-                    const Center(child: Text("Earn 2 point for every \$1 spent")),
-                  ],
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Image.asset(
+                  "assets/images/reward.png",
+                  height: 200,
                 ),
-              ),
-              const SizedBox(height: 20)
-            ],
-          )
-        ),
+                const SizedBox(height: 20),
+                Text(
+                    '${200 - (_progressValue).toInt()} points until your next free drink'),
+                const SizedBox(height: 50),
+                SizedBox(
+                  height: 320.0,
+                  child: Stack(
+                    children: <Widget>[
+                      Center(
+                        child: SizedBox(
+                          child: CircularProgressIndicator(
+                            strokeWidth: 20,
+                            backgroundColor: const Color(0xff42C2FF),
+                            valueColor: const AlwaysStoppedAnimation<Color>(
+                                Color(0xffFF6FB5)),
+                            value: _progressValue / 200,
+                          ),
+                          height: 320.0,
+                          width: 320.0,
+                        ),
+                      ),
+                      const Center(
+                          child: Text("Earn 2 point for every \$1 spent")),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 20)
+              ],
+            )),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -68,6 +75,7 @@ class CircularProgressIndicatorAppState extends State<CircularProgressIndicatorA
       ),
     );
   }
+
   // this function updates the progress value
   void _updateProgress() {
     _progressValue += 2;

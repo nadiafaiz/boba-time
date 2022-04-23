@@ -3,7 +3,7 @@ import 'package:boba_time/constants.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
-  final Function press;
+  final VoidCallback press;
   final Color color, textColor;
   const RoundedButton({
     Key? key,
@@ -32,7 +32,7 @@ class RoundedButton extends StatelessWidget {
         text,
         style: TextStyle(color: textColor),
       ),
-      onPressed: press(),
+      onPressed: press,
       style: ElevatedButton.styleFrom(
         primary: color,
         padding: const EdgeInsets.symmetric(
