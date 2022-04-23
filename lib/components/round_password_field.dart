@@ -3,7 +3,7 @@ import 'package:boba_time/constants.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 
-class RoundedPasswordField extends StatelessWidget {
+class RoundedPasswordField extends StatefulWidget {
   final String? Function(String?)? validator;
   final ValueChanged<String> onChanged;
   const RoundedPasswordField({
@@ -13,20 +13,38 @@ class RoundedPasswordField extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<RoundedPasswordField> createState() => _RoundedPasswordFieldState();
+}
+
+class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
+  bool _showPassword = false;
+
+  void _togglevisibility() {
+    setState(() {
+      _showPassword = !_showPassword;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextField(
-        obscureText: true,
-        onChanged: onChanged,
-        decoration: const InputDecoration(
+      child: TextFormField(
+        obscureText: !_showPassword,
+        onChanged: widget.onChanged,
+        decoration: InputDecoration(
           hintText: "Password",
-          icon: Icon(
+          icon: const Icon(
             Icons.lock,
             color: primaryColor,
           ),
-          suffixIcon: Icon(
-            Icons.visibility,
-            color: primaryColor,
+          suffixIcon: InkWell(
+            child: const Icon(
+              Icons.visibility,
+              color: primaryColor,
+            ),
+            onTap: () {
+              _togglevisibility();
+            },
           ),
           border: InputBorder.none,
         ),
