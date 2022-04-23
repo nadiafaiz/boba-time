@@ -105,7 +105,9 @@ class Body extends StatelessWidget {
               Fluttertoast.showToast(msg: "Login successful!"),
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (context) => const HomeScreen(),
+                  builder: (context) => const HomeScreen(
+                    isGuest: false,
+                  ),
                 ),
               )
             },

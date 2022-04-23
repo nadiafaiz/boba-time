@@ -18,8 +18,8 @@ class NavBar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text(fullName!),
-            accountEmail: Text(email!),
+            accountName: Text(fullName ?? 'Welcome!'),
+            accountEmail: Text(email ?? 'Please consider creating an account'),
             currentAccountPicture: const CircleAvatar(
               radius: 30.0,
               backgroundImage: AssetImage('assets/images/default_profile.png'),
@@ -35,16 +35,18 @@ class NavBar extends StatelessWidget {
               ),
             ),
           ),
-          ListTile(
-            leading: const Icon(Icons.person),
-            title: const Text('Profile'),
-            onTap: () => {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfileScreen()),
-              )
-            },
-          ),
+          if (fullName != null || email != null)
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: const Text('Profile'),
+              onTap: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ProfileScreen()),
+                )
+              },
+            ),
           ListTile(
             leading: const Icon(Icons.share),
             title: const Text('Share with a friend'),
@@ -54,13 +56,26 @@ class NavBar extends StatelessWidget {
             },
           ),
           const Divider(),
-          ListTile(
-            title: const Text('Logout'),
-            leading: const Icon(Icons.exit_to_app),
-            onTap: () => {
-              _showConfirmLogoutDialog(context),
-            },
-          ),
+          fullName != null && email != null
+              ? ListTile(
+                  title: const Text('Logout'),
+                  leading: const Icon(Icons.exit_to_app),
+                  onTap: () => {
+                    _showConfirmLogoutDialog(context),
+                  },
+                )
+              : ListTile(
+                  title: const Text('Go back'),
+                  leading: const Icon(Icons.exit_to_app),
+                  onTap: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LandingScreen(),
+                      ),
+                    )
+                  },
+                ),
         ],
       ),
     );

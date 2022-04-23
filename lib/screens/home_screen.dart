@@ -1,3 +1,4 @@
+import 'package:boba_time/screens/Menu/menu.dart';
 import 'package:boba_time/screens/Reward/reward_screen.dart';
 import 'package:boba_time/widgets/app_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -9,7 +10,9 @@ import '../widgets/navbar.dart';
 import '../widgets/app_text.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final bool isGuest;
+
+  const HomeScreen({Key? key, required this.isGuest}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -23,14 +26,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    FirebaseFirestore.instance
-        .collection("users")
-        .doc(user!.uid)
-        .get()
-        .then((value) {
-      currentUser = UserModel.fromMap(value);
-      setState(() {});
-    });
+    if (!widget.isGuest) {
+      FirebaseFirestore.instance
+          .collection("users")
+          .doc(user!.uid)
+          .get()
+          .then((value) {
+        currentUser = UserModel.fromMap(value);
+        setState(() {});
+      });
+    }
   }
 
   @override
@@ -126,7 +131,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const MenuScreen();
+                              },
+                            ),
+                          );
+                        },
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: const <Widget>[
