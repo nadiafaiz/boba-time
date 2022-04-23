@@ -17,5 +17,4 @@ class Body extends StatelessWidget {
     // );
     return const CircularProgressIndicatorApp();
   }
-
 }

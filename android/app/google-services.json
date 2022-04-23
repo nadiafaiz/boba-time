@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "897421060471",
+    "project_id": "boba-time-33cc8",
+    "storage_bucket": "boba-time-33cc8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897421060471:android:88e0b589c94bb8de77d972",
+        "android_client_info": {
+          "package_name": "com.csc4360.boba_time"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897421060471-v7ksasmu1bc77m13otkoto2026215bkp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.csc4360.boba_time",
+            "certificate_hash": "a9c0a9a23edce81fdffe03e8d7b052a2d1e2d3d6"
+          }
+        },
+        {
+          "client_id": "897421060471-141ogdggrk7ondp88d2ie0imh5hq9jgp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVs4RQJSVc4TGhfQfiOzaLm7XooIj-9w4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897421060471-141ogdggrk7ondp88d2ie0imh5hq9jgp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

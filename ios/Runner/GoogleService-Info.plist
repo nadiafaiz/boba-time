@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>897421060471-u3hfivjoaepkrk2cijf75qjo8ej5kfd7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.897421060471-u3hfivjoaepkrk2cijf75qjo8ej5kfd7</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>897421060471-v7ksasmu1bc77m13otkoto2026215bkp.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAxmgb1mSuPkZlSMRkGyjgHpgvuLnWsNSM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>897421060471</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.bobaTime</string>
+	<key>PROJECT_ID</key>
+	<string>boba-time-33cc8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>boba-time-33cc8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:897421060471:ios:97638494d48d283177d972</string>
+</dict>
+</plist>

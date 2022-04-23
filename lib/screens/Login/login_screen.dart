@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
           },
         ),
       ),
-      body: const Body(),
+      body: Body(),
     );
   }
 }
