@@ -1,7 +1,5 @@
-import 'package:boba_time/screens/landing_screen.dart';
 import 'package:flutter/material.dart';
-
-import '../../Reward/reward_screen.dart';
+import 'package:boba_time/screens/screens.dart';
 import 'profile_menu.dart';
 import 'profile_pic.dart';
 

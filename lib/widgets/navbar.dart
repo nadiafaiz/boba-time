@@ -1,9 +1,7 @@
-import 'package:boba_time/screens/landing_screen.dart';
+import 'package:boba_time/screens/screens.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
-
-import '../screens/Profile/profile_screen.dart';
 
 class NavBar extends StatelessWidget {
   final String? fullName;

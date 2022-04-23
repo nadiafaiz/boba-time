@@ -1,15 +1,10 @@
-import 'package:boba_time/components/round_button.dart';
-import 'package:boba_time/screens/Signup/signup_screen.dart';
-import 'package:boba_time/screens/home_screen.dart';
+import 'package:boba_time/screens/screens.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:boba_time/screens/Login/components/background.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
-import '../../../components/already_have_account_check.dart';
-import '../../../components/round_input_field.dart';
-import '../../../components/round_password_field.dart';
+import 'package:boba_time/components/components.dart';
 
 class Body extends StatelessWidget {
   Body({
