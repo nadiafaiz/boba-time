@@ -1,7 +1,6 @@
 import 'package:boba_time/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/app_buttons.dart';
 import '../widgets/navbar.dart';
 import '../widgets/app_text.dart';
 

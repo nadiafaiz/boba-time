@@ -34,12 +34,12 @@ class LandingScreen extends StatelessWidget {
                       'SIGN IN | SIGN UP',
                       onPressed: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) {
-                                  return LoginScreen();
-                                },
-                            ),
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const LoginScreen();
+                            },
+                          ),
                         );
                       },
                       buttonColor: const Color(0xff603a22),
