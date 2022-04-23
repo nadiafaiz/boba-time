@@ -1,10 +1,22 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:image_picker/image_picker.dart';
 
 class ProfilePic extends StatelessWidget {
   const ProfilePic({
     Key? key,
   }) : super(key: key);
+
+  // File? image;
+  //
+  // Future pickImage() async {
+  //   final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+  //   if(image == null) return;
+  //
+  //   final imageTemp = File(image.path);
+  //   this.image = imageTemp;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +29,10 @@ class ProfilePic extends StatelessWidget {
         children: [
           const CircleAvatar(
             radius: 30.0,
-            backgroundImage: AssetImage('assets/images/default_profile.png'),
+            backgroundImage:
+            // image != null ?
+            // Image.file(image!):
+            AssetImage('assets/images/default_profile.png'),
             backgroundColor: Colors.transparent,
           ),
           Positioned(
@@ -36,6 +51,7 @@ class ProfilePic extends StatelessWidget {
                   backgroundColor: const Color(0xFFF5F6F9),
                 ),
                 onPressed: () {},
+                // onPressed: () => pickImage(),
                 child: SvgPicture.asset("assets/icons/camera.svg"),
               ),
             ),

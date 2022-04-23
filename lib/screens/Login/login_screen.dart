@@ -1,4 +1,5 @@
 import 'package:boba_time/screens/Login/components/body.dart';
+import 'package:boba_time/screens/landing_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -12,7 +13,14 @@ class LoginScreen extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return const LandingScreen();
+                },
+              ),
+            );
           },
         ),
       ),
