@@ -13,22 +13,17 @@ class NavBar extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          UserAccountsDrawerHeader(
+          const UserAccountsDrawerHeader(
             // Update this with Firebase user
-            accountName: const Text('username'),
-            accountEmail: const Text('username@gmail.com'),
+            accountName: Text('username'),
+            accountEmail: Text('username@gmail.com'),
             currentAccountPicture: CircleAvatar(
-              child: ClipOval(
-                child: Image.asset(
-                  'assets/images/default_profile.png',
-                  fit: BoxFit.cover,
-                  width: 90,
-                  height: 90,
-                ),
-              ),
+              radius: 30.0,
+              backgroundImage: AssetImage('assets/images/default_profile.png'),
+              backgroundColor: Colors.transparent,
             ),
-            decoration: const BoxDecoration(
-              color: Colors.blue,
+            decoration: BoxDecoration(
+              color: Colors.white,
               image: DecorationImage(
                 fit: BoxFit.fill,
                 image: AssetImage(
@@ -44,7 +39,7 @@ class NavBar extends StatelessWidget {
             onTap: () => {
               Navigator.push(
                 context,
-                MaterialPageRoute( builder: (context) => ProfileScreen()),
+                MaterialPageRoute(builder: (context) => const ProfileScreen()),
               )
             },
           ),

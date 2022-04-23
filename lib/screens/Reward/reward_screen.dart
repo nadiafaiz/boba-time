@@ -14,8 +14,6 @@ class RewardScreen extends StatelessWidget {
         title: const Text("Reward"),
       ),
       body: const Body(),
-      // bottomNavigationBar: CustomBottomNa,
     );
   }
-
 }
