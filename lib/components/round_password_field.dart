@@ -9,7 +9,7 @@ class RoundedPasswordField extends StatefulWidget {
   const RoundedPasswordField({
     Key? key,
     required this.onChanged,
-    this.validator,
+    this.validator, String? hintText,
   }) : super(key: key);
 
   @override

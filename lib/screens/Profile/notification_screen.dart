@@ -26,19 +26,16 @@ class Body extends StatelessWidget {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Column(
-        children: [
-          const SizedBox(height: 20),
+        children: const [
+          SizedBox(height: 20),
           Noti(
             text: "Notification on Boba News",
-            press: () {},
           ),
           Noti(
             text: "Notification on Special Offers",
-            press: () {},
           ),
           Noti(
             text: "Notification on Order Updates",
-            press: () {},
           ),
         ],
       ),
@@ -50,30 +47,26 @@ class Noti extends StatelessWidget {
   const Noti({
     Key? key,
     required this.text,
-    this.press,
   }) : super(key: key);
 
   final String text;
-  final VoidCallback? press;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: TextButton(
-        style: TextButton.styleFrom(
-          primary: primaryColor,
-          padding: const EdgeInsets.all(20),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-          backgroundColor: primarylightColor,
+      child: Container(
+        height: 60,
+        margin: const EdgeInsets.symmetric(vertical: 10),
+        decoration: const BoxDecoration(
+          color: primarylightColor,
+          borderRadius: BorderRadius.all(Radius.circular(15)),
         ),
-        onPressed: press,
         child: Row(
           children: [
             const SizedBox(width: 20),
-            Expanded(child: Text(text)),
-            MySwitchButton(),
+            Expanded(child: Text(text, style: const TextStyle(fontSize: 15))),
+            const MySwitchButton(),
           ],
         ),
       ),

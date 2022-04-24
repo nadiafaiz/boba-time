@@ -46,9 +46,9 @@ class CircularProgressIndicatorAppState
                         child: SizedBox(
                           child: CircularProgressIndicator(
                             strokeWidth: 20,
-                            backgroundColor: const Color(0xff42C2FF),
+                            backgroundColor: const Color(0xffEFDAD7),
                             valueColor: const AlwaysStoppedAnimation<Color>(
-                                Color(0xffFF6FB5)),
+                                Color(0xffFE83C6)),
                             value: _progressValue / 200,
                           ),
                           height: 320.0,

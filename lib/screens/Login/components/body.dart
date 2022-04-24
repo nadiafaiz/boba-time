@@ -53,6 +53,7 @@ class Body extends StatelessWidget {
                 },
               ),
               RoundedPasswordField(
+                hintText: "Password",
                 validator: (value) {
                   if (value!.isEmpty) {
                     return ("Password is required to log in");

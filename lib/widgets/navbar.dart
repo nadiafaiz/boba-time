@@ -1,3 +1,4 @@
+import 'package:boba_time/constants.dart';
 import 'package:boba_time/screens/screens.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -16,15 +17,15 @@ class NavBar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text(fullName ?? 'Welcome!'),
-            accountEmail: Text(email ?? 'Please consider creating an account'),
+            accountName: Text(fullName ?? 'Welcome!', style: const TextStyle(color: primaryColor),),
+            accountEmail: Text(email ?? 'Please consider creating an account',style: const TextStyle(color: primaryColor),),
             currentAccountPicture: const CircleAvatar(
               radius: 30.0,
               backgroundImage: AssetImage('assets/images/default_profile.png'),
               backgroundColor: Colors.transparent,
             ),
             decoration: const BoxDecoration(
-              color: Colors.white,
+              color: primaryColor,
               image: DecorationImage(
                 fit: BoxFit.fill,
                 image: AssetImage(
@@ -47,7 +48,7 @@ class NavBar extends StatelessWidget {
             ),
           ListTile(
             leading: const Icon(Icons.share),
-            title: const Text('Share with a friend'),
+            title: const Text('Share with a friend',style: TextStyle(color: primaryColor),),
             onTap: () => {
               Share.shareWithResult(
                   'Check out our Github https://github.com/nadiafaiz/boba_time'),
@@ -56,14 +57,14 @@ class NavBar extends StatelessWidget {
           const Divider(),
           fullName != null && email != null
               ? ListTile(
-                  title: const Text('Logout'),
+                  title: const Text('Logout',style:  TextStyle(color: primaryColor),),
                   leading: const Icon(Icons.exit_to_app),
                   onTap: () => {
                     _showConfirmLogoutDialog(context),
                   },
                 )
               : ListTile(
-                  title: const Text('Go back'),
+                  title: const Text('Go back',style: TextStyle(color: primaryColor),),
                   leading: const Icon(Icons.exit_to_app),
                   onTap: () => {
                     Navigator.push(
