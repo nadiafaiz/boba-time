@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:image_picker/image_picker.dart';
@@ -30,9 +29,9 @@ class ProfilePic extends StatelessWidget {
           const CircleAvatar(
             radius: 30.0,
             backgroundImage:
-            // image != null ?
-            // Image.file(image!):
-            AssetImage('assets/images/default_profile.png'),
+                // image != null ?
+                // Image.file(image!):
+                AssetImage('assets/images/default_profile.png'),
             backgroundColor: Colors.transparent,
           ),
           Positioned(
