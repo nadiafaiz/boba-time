@@ -1,7 +1,6 @@
-import 'package:boba_time/screens/landing_screen.dart';
+import 'package:boba_time/screens/Profile/setting_screen.dart';
+import 'package:boba_time/screens/screens.dart';
 import 'package:flutter/material.dart';
-
-import '../../Reward/reward_screen.dart';
 import 'profile_menu.dart';
 import 'profile_pic.dart';
 
@@ -33,12 +32,30 @@ class Body extends StatelessWidget {
           ProfileMenu(
             text: "Notifications",
             image: "assets/images/coffee-shop.png",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const NotificationScreen();
+                  },
+                ),
+              );
+            },
           ),
           ProfileMenu(
             text: "Settings",
             image: "assets/images/cookie.png",
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const SettingScreen();
+                  },
+                ),
+              );
+            },
           ),
           ProfileMenu(
             text: "Help Center",

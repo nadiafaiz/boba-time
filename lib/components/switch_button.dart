@@ -6,6 +6,7 @@ class MySwitchButton extends StatefulWidget {
   @override
   SwitchButton createState() => SwitchButton();
 }
+
 class SwitchButton extends State<MySwitchButton> {
   bool isSwitched = true;
 
@@ -16,10 +17,8 @@ class SwitchButton extends State<MySwitchButton> {
       onChanged: (value) {
         isSwitched = value;
       },
-      activeTrackColor: Color(0xffC1F4C5),
-      activeColor: Color(0xff65C18C),
+      activeTrackColor: const Color(0xffC1F4C5),
+      activeColor: const Color(0xff65C18C),
     );
   }
-
-
 }

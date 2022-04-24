@@ -18,7 +18,6 @@ class NotificationScreen extends StatelessWidget {
   }
 }
 
-
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
@@ -29,15 +28,15 @@ class Body extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 20),
-          Noti (
+          Noti(
             text: "Notification on Boba News",
             press: () {},
           ),
-          Noti (
+          Noti(
             text: "Notification on Special Offers",
             press: () {},
           ),
-          Noti (
+          Noti(
             text: "Notification on Order Updates",
             press: () {},
           ),
@@ -66,7 +65,7 @@ class Noti extends StatelessWidget {
           primary: primaryColor,
           padding: const EdgeInsets.all(20),
           shape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           backgroundColor: primarylightColor,
         ),
         onPressed: press,
