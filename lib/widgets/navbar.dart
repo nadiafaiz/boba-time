@@ -25,7 +25,7 @@ class NavBar extends StatelessWidget {
               backgroundColor: Colors.transparent,
             ),
             decoration: const BoxDecoration(
-              color: primaryColor,
+              color: Colors.white,
               image: DecorationImage(
                 fit: BoxFit.fill,
                 image: AssetImage(
