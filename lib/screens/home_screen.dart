@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      InkWell(
+                      if (currentUser.fullName != null) InkWell(
                         onTap: () {
                           Navigator.push(
                             context,

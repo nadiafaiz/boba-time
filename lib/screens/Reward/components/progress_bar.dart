@@ -64,15 +64,15 @@ class CircularProgressIndicatorAppState
               ],
             )),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            _loading = !_loading;
-            _updateProgress();
-          });
-        },
-        child: const Icon(Icons.cloud_download),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     setState(() {
+      //       _loading = !_loading;
+      //       _updateProgress();
+      //     });
+      //   },
+      //   child: const Icon(Icons.cloud_download),
+      // ),
     );
   }
 
