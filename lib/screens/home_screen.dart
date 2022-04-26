@@ -42,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
         email: currentUser.email,
       ),
       appBar: AppBar(
+        foregroundColor: Colors.black,
         backgroundColor: const Color(0xffffd8cf),
       ),
       body: Column(
@@ -95,41 +96,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return const MenuScreen();
-                              },
-                            ),
-                          );
-                        },
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: const <Widget>[
-                            Icon(Icons.restaurant_menu),
-                            Text('Menu'),
-                          ],
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {},
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: const <Widget>[
-                            Icon(Icons.attach_money),
-                            Text('Pay '),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      if (currentUser.fullName != null) InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
                                 return const RewardScreen();
                               },
                             ),
@@ -143,10 +109,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-                      //     : InkWell(
-                      //         onTap: () {},
-                      //         child: Column(),
-                      // ),
                       InkWell(
                         onTap: () {
                           Navigator.push(
@@ -163,6 +125,25 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: const <Widget>[
                             Icon(Icons.location_on),
                             Text('Locations'),
+                          ],
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const MenuScreen();
+                              },
+                            ),
+                          );
+                        },
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: const <Widget>[
+                            Icon(Icons.restaurant_menu),
+                            Text('Menu'),
                           ],
                         ),
                       ),

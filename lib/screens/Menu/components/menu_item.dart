@@ -1,3 +1,4 @@
+import 'package:boba_time/screens/Order/order_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
@@ -7,7 +8,6 @@ class MenuItem extends StatelessWidget {
   final MenuItemModel menuItem;
 
   const MenuItem({Key? key, required this.menuItem}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -69,7 +69,16 @@ class MenuItem extends StatelessWidget {
                   radius: 15,
                   child: Icon(Icons.add),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return OrderScreen(menuItem: this);
+                      },
+                    ),
+                  );
+                },
               ),
             ),
           ],
@@ -78,3 +87,5 @@ class MenuItem extends StatelessWidget {
     );
   }
 }
+
+class Context {}

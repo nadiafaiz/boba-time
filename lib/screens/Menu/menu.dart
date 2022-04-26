@@ -16,6 +16,7 @@ class _MenuScreenState extends State<MenuScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Menu'),
+        foregroundColor: Colors.black,
         backgroundColor: const Color(0xffffd8cf),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
